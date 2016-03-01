@@ -8,7 +8,13 @@
         <link rel="import" href="bower_components/font-roboto/roboto.html">
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/iron-pages/iron-pages.html">
+        <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
         <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+        <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <link rel="stylesheet" href="style/main.css" />
+        <link rel="import" href="bower_components/iron-image/iron-image.html"/>
+        <link rel="import" href="bower_components/iron-icon/iron-icon.html">
+        <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
     <style>
@@ -24,22 +30,41 @@
 
     </style>
     <body>
-        <template id="t" is="dom-bind">
+        <template id="template" is="dom-bind">
             <paper-scroll-header-panel>
-                <paper-toolbar >
-                    <span class="title">Title</span>
+                <paper-toolbar class="layout horizontal center-center" >
+                    <!--<span class="title">Title</span>-->
                     <paper-tabs selected="{{selected}}">
                         <paper-tab>Tab 1</paper-tab>
                         <paper-tab>Tab 2</paper-tab>
-                        <paper-tab>Tab 3</paper-tab>
+                        <paper-tab><iron-icon icon="icons:favorite"></iron-icon></paper-tab>
                     </paper-tabs>
                 </paper-toolbar>
                 <iron-pages selected="{{selected}}">
-                    <div>Page 1</div>
+                    <div>Page 1
+                        <paper-material elevation="1">
+                            <iron-image  src="img/portrait1.jpg"></iron-image>
+                        </paper-material>
+
+                        <div id="stackoverflow">
+                            <a href="http://stackoverflow.com/users/594056/maria">
+                                <img src="http://stackoverflow.com/users/flair/594056.png?theme=clean" width="208" height="58"
+                                     alt="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                                     title="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                            </a>
+                        </div>
+
+                    </div>
                     <div>Page 2</div>
                     <div>Page 3</div>
                 </iron-pages>
             </paper-scroll-header-panel>
-        <template>
+        </template>
     </body>
+    <script>
+
+        document.getElementById("template").addEventListener("dom-change", function(){
+            document.querySelector("paper-tabs").select(0);
+        });
+    </script>
 </html>
