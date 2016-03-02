@@ -17,7 +17,24 @@ paper-material {
 iron-image {
     border-radius: 50%;
 }
+.description {
+    padding: 5px;
+}
 
 paper-tab {
-    width: 70px;
+    min-width: 150px;
+}
+
+
+
+@media (max-width: 700px) {
+    .description {
+        display: none;
+    }
+    paper-tabs {
+        width: 100%;
+    }
+    paper-tab {
+        min-width: 18%;
+    }
 }

@@ -11,10 +11,18 @@
         <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
         <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
-        <link rel="stylesheet" href="style/main.css" />
         <link rel="import" href="bower_components/iron-image/iron-image.html"/>
         <link rel="import" href="bower_components/iron-icon/iron-icon.html">
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+        <link rel="import" href="bower_components/iron-icons/device-icons.html">
+        <link rel="import" href="bower_components/iron-icons/social-icons.html">
+        <link rel="import" href="bower_components/iron-icons/av-icons.html">
+        <link rel="import" href="bower_components/paper-styles/default-theme.html">
+        <link rel="import" href="bower_components/paper-styles/color.html">
+        <link rel="import" href="bower_components/paper-styles/shadow.html">
+        <link rel="import" href="bower_components/paper-styles/typography.html">
+        <link rel="stylesheet" href="style/main.css" />
+
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
     <style>
@@ -41,11 +49,12 @@
         <template id="template" is="dom-bind">
             <paper-scroll-header-panel>
                 <paper-toolbar class="layout horizontal center-center" >
-                    <span class="title">Title</span>
+                    <!--<span class="title">Title</span>-->
                     <paper-tabs selected="{{selected}}">
-                        <paper-tab>Tab 1</paper-tab>
-                        <paper-tab>Tab 2</paper-tab>
-                        <paper-tab><iron-icon icon="icons:favorite"></iron-icon></paper-tab>
+                        <paper-tab><span class="description">About me</span><iron-icon icon="social:person"></iron-icon></paper-tab>
+                        <paper-tab><span class="description">Projects</span><iron-icon icon="social:school"></iron-icon></paper-tab>
+                        <paper-tab><span class="description">Publications</span><iron-icon icon="av:library-books"></iron-icon></paper-tab>
+                        <paper-tab><span class="description">Demo</span><iron-icon icon="device:devices"></iron-icon></paper-tab>
                     </paper-tabs>
                 </paper-toolbar>
                 <iron-pages selected="{{selected}}">
