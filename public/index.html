@@ -29,11 +29,19 @@
 
 
     </style>
+
+    <style is="custom-style">
+        iron-image {
+            --iron-image-width: 200px;
+            --iron-image-height: 200px;
+        }
+
+    </style>
     <body>
         <template id="template" is="dom-bind">
             <paper-scroll-header-panel>
                 <paper-toolbar class="layout horizontal center-center" >
-                    <!--<span class="title">Title</span>-->
+                    <span class="title">Title</span>
                     <paper-tabs selected="{{selected}}">
                         <paper-tab>Tab 1</paper-tab>
                         <paper-tab>Tab 2</paper-tab>
@@ -43,7 +51,9 @@
                 <iron-pages selected="{{selected}}">
                     <div>Page 1
                         <paper-material elevation="1">
-                            <iron-image  src="img/portrait1.jpg"></iron-image>
+                            <iron-image src="img/portrait1.jpg"></iron-image>
+
+                            <!--<iron-image  src="img/portrait1.jpg"></iron-image>-->
                         </paper-material>
 
                         <div id="stackoverflow">

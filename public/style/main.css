@@ -13,11 +13,9 @@ paper-material {
     height: 200px;
     border: 5px solid white;
 }
-iron-image img {
-    background-position: 50%;
+
+iron-image {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
 }
 
 paper-tab {
