@@ -1,18 +1,24 @@
-html,body {
-    height: 100%;
-    margin: 0;
-    background-color: #E5E5E5;
-    font-family: 'RobotoDraft', sans-serif;
+body {
+    font-family: 'Roboto';
 }
 
 
-paper-material {
+#image {
     background-position: 50%;
     border-radius: 50%;
     width: 200px;
     height: 200px;
     border: 5px solid white;
 }
+
+.container {
+    margin: 20px;
+    padding: 20px;
+    max-width: 920px;
+    background-color: white;
+
+}
+
 
 iron-image {
     border-radius: 50%;
@@ -31,10 +37,15 @@ paper-tab {
     .description {
         display: none;
     }
-    paper-tabs {
-        width: 100%;
-    }
     paper-tab {
-        min-width: 18%;
+        min-width: 50px;
+    }
+
+    .container {
+        margin: 0px;
+        padding: 0px;
+        max-width: 920px;
+        background-color: white;
+        box-shadow: none !important;
     }
 }

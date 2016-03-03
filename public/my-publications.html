@@ -1,0 +1,116 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+<dom-module id="my-publications">
+    <template>
+        <template is="dom-repeat" items="[[publications]]" >
+            <div class="paper">
+                <h4>[[item.title]] <span><iron-icon hidden="[[!item.award]]" icon="icons:star"></iron-icon></span></h4>
+                <div>[[item.authors]]</div>
+                <span>[[item.conference]]</span>,
+                <span>[[item.date]]</span>
+                <span  style="font-weight: bold">[[item.award]]</span>
+            </div>
+        </template>
+    </template>
+    <style>
+        .paper {
+            border: 1px solid #E5E5E5;
+            margin: 7px;
+            padding: 7px;
+        }
+        .paper:nth-child(1) {
+            margin-top: 0;
+        }
+        iron-icon {
+            position: relative;
+            top: -3px;
+        }
+        h4 {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+
+        :host {
+            display: block;
+            padding-top: 7px;
+        }
+    </style>
+</dom-module>
+<script>
+    function publication(title, authors, conference, date, award) {
+        this.title = title;
+        this.authors = authors;
+        this.conference = conference;
+        this.date = date;
+        this.award = award;
+    }
+    Polymer({
+        is: 'my-publications',
+
+        properties: {
+            publications: {
+                type: Array,
+                value: function() {
+                    return [new publication("CTAT: Tilt-and-Tap Across Devices",
+                            "Linda Di Geronimo, Maria Husmann, Abhimanyu Patel, Can Tuerk, Moira C. Norrie",
+                            "Proc. 16th Intl. Conf. on Web Engineering (ICWE), Lugano, Switzerland",
+                            "June 2016"
+                            ),
+                        new publication("Extending a Learning Platform with Cross-Device Functionality",
+                                "Maria Husmann, Nicola Marcacci Rossi, Moira C. Norrie",
+                                "2nd Intl. Workshop on Interacting with Multi-Device Ecologies in the Wild (Cross-Surface 2016), CHI Conference, San Jose, CA, USA",
+                                "May 2016"
+                        ),
+                        new publication("XD-MVC: Support for Cross-Device Development",
+                                "Maria Husmann, Moira C. Norrie",
+                                "1st Intl. Workshop on Interacting with Multi-Device Ecologies in the Wild (Cross-Surface 2015), ITS Conference, Madeira, Portugal",
+                                "November 2015"
+                        ),
+                        new publication("Eyes-Free Touch Command Support for Pen-Based Digital Whiteboards via Handheld Devices",
+                                "Fabrice Matulic, Maria Husmann, Seraiah Walter, Moira C. Norrie",
+                                "Proc. ACM Interactive Tabletops and Surfaces 2015 Conference (ITS 2015), Funchal, Madeira, Portugal",
+                                "November 2015"
+                        ),
+                        new publication("XDSession: Integrated Development and Testing of Cross-Device Applications",
+                                "Michael Nebeling, Maria Husmann, Christoph Zimmerli, Giulio Valente, Moira C. Norrie",
+                                "Proc. 7th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS 2015), Late Breaking Result, Duisberg, Germany",
+                                "June 2015"
+                        ),
+                        new publication("MultiMasher: Providing Architectural Support and Visual Tools for Multi-Device Mashups",
+                                "Maria Husmann, Michael Nebeling, Stefano Pongelli, Moira C. Norrie",
+                                "Proc. 15th Intl. Conf. on Web Information Systems Engineering (WISE 2014), Thessaloniki, Greece",
+                                "October 2014",
+                                "(Best Paper Award)"
+                        ),
+                        new publication("XDKinect: Development Framework for Cross-Device Interaction using Kinect",
+                                "Michael Nebeling, Elena Teunissen, Maria Husmann, Moira C. Norrie",
+                                "Proc. 6th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS 2014), Rome, Italy",
+                                "June 2014",
+                                "(Best Paper Award)"
+                        ),
+                        new publication("Interactive Development of Cross-Device User Interfaces",
+                                "Michael Nebeling, Theano Mintsi, Maria Husmann, Moira C. Norrie",
+                                "Proc. 32nd ACM SIGCHI Conf. on Human Factors in Computing Systems (CHI 2014), Toronto, Canada",
+                                "April 2014"
+                        ),
+                        new publication("MultiMasher: A Visual Tool for Multi-Device Mashups",
+                                "Maria Husmann, Michael Nebeling, Moira C. Norrie",
+                                "Current Trends in Web Engineering - 13th Intl. Conf. on Web Engineering (ICWE 2013 Workshops), Aalborg, Denmark",
+                                "July 2013"
+                        ),
+                        new publication("Information Concepts for Cross-device Applications",
+                                "Michael Nebeling, Christoph Zimmerli, Maria Husmann, David Simmen, Moira C. Norrie",
+                                " 5th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS 2013): 3rd Workshop on Distributed User Interfaces (DUI 2013), London, England",
+                                "June 2013"
+                        )
+                    ];
+                }
+            }
+        }
+
+
+    });
+
+
+</script>
+

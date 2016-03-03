@@ -9,6 +9,7 @@
         <link rel="import" href="bower_components/polymer/polymer.html">
         <link rel="import" href="bower_components/iron-pages/iron-pages.html">
         <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+        <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
         <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
         <link rel="import" href="bower_components/iron-image/iron-image.html"/>
@@ -21,20 +22,21 @@
         <link rel="import" href="bower_components/paper-styles/color.html">
         <link rel="import" href="bower_components/paper-styles/shadow.html">
         <link rel="import" href="bower_components/paper-styles/typography.html">
+        <link rel="import" href="my-publications.html">
         <link rel="stylesheet" href="style/main.css" />
 
         <meta name="viewport" content="width=device-width, user-scalable=no">
     </head>
+    <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
+
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            font-family: Roboto;
-        }
         paper-scroll-header-panel {
             height: 100%;
         }
 
+        iron-pages {
+            width: 100%;
+        }
 
     </style>
 
@@ -44,11 +46,14 @@
             --iron-image-height: 200px;
         }
 
+        iron-pages {
+            background-color: var(--google-grey-100);
+        }
     </style>
-    <body>
+    <body class="fullbleed layout vertical">
         <template id="template" is="dom-bind">
-            <paper-scroll-header-panel>
-                <paper-toolbar class="layout horizontal center-center" >
+            <paper-scroll-header-panel class="flex">
+                <paper-toolbar class="layout horizontal center-justified" >
                     <!--<span class="title">Title</span>-->
                     <paper-tabs selected="{{selected}}">
                         <paper-tab><span class="description">About me</span><iron-icon icon="social:person"></iron-icon></paper-tab>
@@ -57,12 +62,10 @@
                         <paper-tab><span class="description">Demo</span><iron-icon icon="device:devices"></iron-icon></paper-tab>
                     </paper-tabs>
                 </paper-toolbar>
-                <iron-pages selected="{{selected}}">
+                <iron-pages class="layout horizontal center-justified" selected="{{selected}}">
                     <div>Page 1
-                        <paper-material elevation="1">
+                        <paper-material id="image" elevation="1">
                             <iron-image src="img/portrait1.jpg"></iron-image>
-
-                            <!--<iron-image  src="img/portrait1.jpg"></iron-image>-->
                         </paper-material>
 
                         <div id="stackoverflow">
@@ -74,8 +77,12 @@
                         </div>
 
                     </div>
-                    <div>Page 2</div>
-                    <div>Page 3</div>
+                    <div>Projects</div>
+                    <div><paper-material class="container" elevation="1">
+                        <my-publications></my-publications>
+                    </paper-material>
+                    </div>
+                    <div>Page 4</div>
                 </iron-pages>
             </paper-scroll-header-panel>
         </template>
@@ -83,7 +90,7 @@
     <script>
 
         document.getElementById("template").addEventListener("dom-change", function(){
-            document.querySelector("paper-tabs").select(0);
+            document.querySelector("paper-tabs").select(2);
         });
     </script>
 </html>
