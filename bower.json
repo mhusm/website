@@ -20,7 +20,7 @@
     "iron-icon": "PolymerElements/iron-icon#~1.0.7",
     "iron-icons": "PolymerElements/iron-icons#~1.1.3",
     "paper-styles": "PolymerElements/paper-styles#~1.1.4",
-    "xdmvcclient":  "mhusm/XD-MVC-Client",
+    "xdmvcclient": "mhusm/XD-MVC-Client",
     "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.0"
   }
 }
