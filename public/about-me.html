@@ -1,0 +1,87 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-image/iron-image.html"/>
+<link rel="import" href="bower_components/paper-material/paper-material.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="about-me">
+    <template>
+        <style>
+            #image {
+                background-position: 50%;
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+                border: 5px solid white;
+            }
+
+            iron-image {
+                border-radius: 50%;
+                --iron-image-width: 200px;
+                --iron-image-height: 200px;
+            }
+
+            :host {
+                display: block;
+                padding: 7px;
+                height: 100%;
+            }
+
+            #text {
+                padding-left: 14px;
+                max-width: 600px;
+                min-width: 300px;
+            }
+            #all {
+                height: 100%;
+            }
+
+
+
+        </style>
+        <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
+
+        <div id="all" class="layout vertical flex center">
+                <paper-material id="image" elevation="1">
+                    <iron-image src="img/portrait1.jpg"></iron-image>
+                </paper-material>
+
+                <div id="text" class="flex">
+                    <p>I'm doctoral student at the <a href="https://globis.ethz.ch/">Global Information Systems Group</a> at ETH Zürich working at the intersection of web engineering and HCI, specifically in cross-device or distributed applications. As part of my research I'm trying to make developers' lives easier by looking into what kind of tools and frameworks could help them.
+                    </p>
+                    <p>
+                        I have a Bachelor and a Master degree in Computer Science from ETH. During my studies I spent a semester at UNSW in Sydney
+                        and had 3-month internship with <a href="http://www.systerel.fr">Systerel</a> in France.
+                        Before, during, and for a year after my studies, I worked at <a href="http://www.moelbert.ch/">Moelbert AG</a> as a Software Developer and Engineer.
+                    </p>
+
+
+                </div>
+
+            <div id="social" >
+                <div id="stackoverflow">
+                    <a href="http://stackoverflow.com/users/594056/maria">
+                        <img src="http://stackoverflow.com/users/flair/594056.png?theme=clean" width="208" height="58"
+                             alt="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
+                             title="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
+                    </a>
+                </div>
+            </div>
+        </div>
+     </template>
+
+</dom-module>
+<script>
+    function publication(title, authors, conference, date, award) {
+        this.title = title;
+        this.authors = authors;
+        this.conference = conference;
+        this.date = date;
+        this.award = award;
+    }
+    Polymer({
+        is: 'about-me'
+    });
+
+
+</script>

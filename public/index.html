@@ -12,7 +12,6 @@
         <link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
         <link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
-        <link rel="import" href="bower_components/iron-image/iron-image.html"/>
         <link rel="import" href="bower_components/iron-icon/iron-icon.html">
         <link rel="import" href="bower_components/iron-icons/iron-icons.html">
         <link rel="import" href="bower_components/iron-icons/device-icons.html">
@@ -23,6 +22,7 @@
         <link rel="import" href="bower_components/paper-styles/shadow.html">
         <link rel="import" href="bower_components/paper-styles/typography.html">
         <link rel="import" href="my-publications.html">
+        <link rel="import" href="about-me.html">
         <link rel="stylesheet" href="style/main.css" />
 
         <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -36,16 +36,12 @@
 
         iron-pages {
             width: 100%;
+            min-height: 100%;
         }
 
     </style>
 
     <style is="custom-style">
-        iron-image {
-            --iron-image-width: 200px;
-            --iron-image-height: 200px;
-        }
-
         iron-pages {
             background-color: var(--google-grey-100);
         }
@@ -63,25 +59,13 @@
                     </paper-tabs>
                 </paper-toolbar>
                 <iron-pages class="layout horizontal center-justified" selected="{{selected}}">
-                    <div>Page 1
-                        <paper-material id="image" elevation="1">
-                            <iron-image src="img/portrait1.jpg"></iron-image>
-                        </paper-material>
-
-                        <div id="stackoverflow">
-                            <a href="http://stackoverflow.com/users/594056/maria">
-                                <img src="http://stackoverflow.com/users/flair/594056.png?theme=clean" width="208" height="58"
-                                     alt="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers"
-                                     title="profile for Maria at Stack Overflow, Q&amp;A for professional and enthusiast programmers">
-                            </a>
-                        </div>
-
-                    </div>
+                     <paper-material class="container layout vertical" elevation="1">
+                        <about-me class="flex layout vertical"></about-me>
+                     </paper-material>
                     <div>Projects</div>
-                    <div><paper-material class="container" elevation="1">
+                    <paper-material class="container" elevation="1">
                         <my-publications></my-publications>
                     </paper-material>
-                    </div>
                     <div>Page 4</div>
                 </iron-pages>
             </paper-scroll-header-panel>
@@ -90,7 +74,7 @@
     <script>
 
         document.getElementById("template").addEventListener("dom-change", function(){
-            document.querySelector("paper-tabs").select(2);
+            document.querySelector("paper-tabs").select(0);
         });
     </script>
 </html>
