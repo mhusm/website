@@ -17,8 +17,8 @@
         <xdmvc-connection ></xdmvc-connection>
 
         <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
-        <xdmvc-url-pairing connector="viewer" connectee="controller" url="{{url}}"></xdmvc-url-pairing>
-        <controller-layout >
+        <xdmvc-url-pairing url="{{url}}"></xdmvc-url-pairing>
+        <controller-layout>
             <div class="controller">
                 <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
                 <template is="dom-repeat" items="[[album.thumbs]]">
@@ -62,15 +62,44 @@
                         this.album= JSON.parse(data);
                     }.bind(this), true
             );
+            XDmvc.on("XDserverReady", this.adjustRoles.bind(this));
+            XDmvc.on("XDconnection", this.adjustRoles.bind(this));
+            XDmvc.on("XDdisconnection", this.adjustRoles.bind(this));
+
         },
         select: function(event) {
-            console.log(event.model.index);
             this.$.pages.select(event.model.index);
         },
-        getSource :function() {
+        getSource: function() {
             return this.album.large[this.selected];
-        }
+        },
+        adjustRoles: function() {
+            if (XDmvc.getConnectedDevices().length == 0) {
+                XDmvc.addRole("viewer");
+                XDmvc.addRole("controller");
+            } else {
+                var devices = XDmvc.getConnectedDevices().slice();
+                devices = devices.map(function(d){
+                    return d.device;
+                });
+                devices.push(XDmvc.device);
+                devices.sort(function(a, b){
+                    // First compare diagonal, then on ID to be deterministic
+                    var diff = a.diam - b.diam;
+                    return diff !== 0? diff : a.id.localeCompare(b.id);
+                });
+                var smallest = devices[0];
+                if (smallest === XDmvc.device) {
+                    XDmvc.addRole("controller");
+                    XDmvc.removeRole("viewer");
+                } else {
+                    XDmvc.addRole("viewer");
+                    XDmvc.removeRole("controller");
+                }
 
+            }
+
+        }
     });
 
 
