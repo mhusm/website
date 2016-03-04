@@ -23,7 +23,8 @@
         <link rel="import" href="bower_components/paper-styles/typography.html">
         <link rel="import" href="bower_components/iron-page-url/iron-page-url.html">
         <link rel="import" href="my-publications.html">
-        <link rel="import" href="about-me.html">
+        <link rel="import" href="my-publications.html">
+        <link rel="import" href="xd-demo.html">
         <link rel="stylesheet" href="style/main.css" />
 
         <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -68,9 +69,22 @@
                     <paper-material data-name="publications" class="container" elevation="1">
                         <my-publications></my-publications>
                     </paper-material>
-                    <div data-name="demo">Page 4</div>
+                    <div data-name="demo">
+                        <xd-demo></xd-demo>
+                    </div>
                 </iron-pages>
             </paper-scroll-header-panel>
         </template>
     </body>
 </html>
+
+<script>
+    document.addEventListener('WebComponentsReady', function () {
+
+
+        var template = document.querySelector('template[is="dom-bind"]');
+        if(!template.selected) {
+            template.selected = "about"; // selected is an index by default
+        }
+    });
+</script>

@@ -1,0 +1,77 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/xdmvcclient/polymer/xdmvc-connect.html">
+<link rel="import" href="bower_components/xdmvcclient/polymer/xdmvc-connection.html">
+<link rel="import" href="bower_components/xdmvcclient/polymer/xdmvc-url-pairing.html">
+<link rel="import" href="bower_components/xdmvcclient/layouts/controller-layout.html">
+
+<link rel="import" href="bower_components/xdmvcclient/layouts/lazy-page-layout.html">
+
+<dom-module id="xd-demo">
+    <template>
+        <style>
+            img {
+                max-width: 400px;
+            }
+
+        </style>
+        <xdmvc-connection ></xdmvc-connection>
+
+        <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
+        <xdmvc-url-pairing connector="viewer" connectee="controller" url="{{url}}"></xdmvc-url-pairing>
+        <controller-layout >
+            <div class="controller">
+                <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
+                <template is="dom-repeat" items="[[album.thumbs]]">
+                    <img on-tap="select" src="[[item]]" />
+                </template>
+
+            </div>
+            <div class="viewer">
+                <lazy-page-layout id="pages" selected="{{selected}}" current="{{currentIndex}}">
+                    <img on-tap="next" src="[[getSource(album.*, selected)]]" />
+                </lazy-page-layout>
+            </div>
+        </controller-layout>
+
+
+    </template>
+
+</dom-module>
+<script>
+
+    Polymer({
+        is: 'xd-demo',
+
+        properties: {
+            selected: {
+                type: Number,
+                value: 0
+            },
+            album: {
+                type: Object
+            },
+            currentIndex: {
+                type: Number
+            }
+
+        },
+
+        ready: function(){
+            ajax.get("/gallery", undefined,
+                    function (data) {
+                        this.album= JSON.parse(data);
+                    }.bind(this), true
+            );
+        },
+        select: function(event) {
+            console.log(event.model.index);
+            this.$.pages.select(event.model.index);
+        },
+        getSource :function() {
+            return this.album.large[this.selected];
+        }
+
+    });
+
+
+</script>
