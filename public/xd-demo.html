@@ -3,24 +3,53 @@
 <link rel="import" href="bower_components/xdmvcclient/polymer/xdmvc-connection.html">
 <link rel="import" href="bower_components/xdmvcclient/polymer/xdmvc-url-pairing.html">
 <link rel="import" href="bower_components/xdmvcclient/layouts/controller-layout.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
 
 <link rel="import" href="bower_components/xdmvcclient/layouts/lazy-page-layout.html">
 
-<dom-module id="xd-demo">
+<dom-module id="xd-demo" >
     <template>
         <style>
-            img {
-                max-width: 400px;
+            lazy-page-layout img {
+                max-width: 80%;
+                margin: auto;
+                display: block;
+            }
+            .viewer {
+                order: 2;
+                padding: 2em;
+                width: 100%;
+            }
+            .controller {
+                order: 3;
+                padding: 2em;
+                width: 100%;
+            }
+
+            controller-layout {
+                width: 100%;
+            }
+            /*xdmvc-connect{*/
+                /*height: 50px;*/
+                /*display: block;*/
+            /*}*/
+
+            lazy-page-layout {
+                display: block;
+                width: 100%;
             }
 
         </style>
+        <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
+
         <xdmvc-connection ></xdmvc-connection>
 
         <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
         <xdmvc-url-pairing url="{{url}}"></xdmvc-url-pairing>
-        <controller-layout>
+        <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
+        <controller-layout class="layout vertical center">
             <div class="controller">
-                <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
                 <template is="dom-repeat" items="[[album.thumbs]]">
                     <img on-tap="select" src="[[item]]" />
                 </template>

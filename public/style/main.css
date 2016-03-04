@@ -23,7 +23,9 @@ paper-tab {
     min-width: 150px;
 }
 
-
+#demo {
+    width: 100%;
+}
 
 @media (max-width: 600px), (max-height: 700px) {
     .description {

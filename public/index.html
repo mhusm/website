@@ -22,7 +22,7 @@
         <link rel="import" href="bower_components/paper-styles/shadow.html">
         <link rel="import" href="bower_components/paper-styles/typography.html">
         <link rel="import" href="bower_components/iron-page-url/iron-page-url.html">
-        <link rel="import" href="my-publications.html">
+        <link rel="import" href="about-me.html">
         <link rel="import" href="my-publications.html">
         <link rel="import" href="xd-demo.html">
         <link rel="stylesheet" href="style/main.css" />
@@ -69,9 +69,7 @@
                     <paper-material data-name="publications" class="container" elevation="1">
                         <my-publications></my-publications>
                     </paper-material>
-                    <div data-name="demo">
-                        <xd-demo></xd-demo>
-                    </div>
+                    <xd-demo data-name="demo" id="demo" class="layout vertical start"></xd-demo>
                 </iron-pages>
             </paper-scroll-header-panel>
         </template>
