@@ -21,6 +21,7 @@
         <link rel="import" href="bower_components/paper-styles/color.html">
         <link rel="import" href="bower_components/paper-styles/shadow.html">
         <link rel="import" href="bower_components/paper-styles/typography.html">
+        <link rel="import" href="bower_components/iron-page-url/iron-page-url.html">
         <link rel="import" href="my-publications.html">
         <link rel="import" href="about-me.html">
         <link rel="stylesheet" href="style/main.css" />
@@ -48,33 +49,28 @@
     </style>
     <body class="fullbleed layout vertical">
         <template id="template" is="dom-bind">
+            <iron-page-url hash="{{selected}}"></iron-page-url>
             <paper-scroll-header-panel class="flex">
                 <paper-toolbar class="layout horizontal center-justified" >
                     <!--<span class="title">Title</span>-->
-                    <paper-tabs selected="{{selected}}">
-                        <paper-tab><span class="description">About me</span><iron-icon icon="social:person"></iron-icon></paper-tab>
-                        <paper-tab><span class="description">Projects</span><iron-icon icon="social:school"></iron-icon></paper-tab>
-                        <paper-tab><span class="description">Publications</span><iron-icon icon="av:library-books"></iron-icon></paper-tab>
-                        <paper-tab><span class="description">Demo</span><iron-icon icon="device:devices"></iron-icon></paper-tab>
+                    <paper-tabs selected="{{selected}}" attr-for-selected="data-name">
+                        <paper-tab selected data-name="about"><span class="description">About me</span><iron-icon icon="social:person"></iron-icon></paper-tab>
+                        <paper-tab data-name="projects"><span class="description">Projects</span><iron-icon icon="social:school"></iron-icon></paper-tab>
+                        <paper-tab data-name="publications"><span class="description">Publications</span><iron-icon icon="av:library-books"></iron-icon></paper-tab>
+                        <paper-tab data-name="demo"><span class="description">Demo</span><iron-icon icon="device:devices"></iron-icon></paper-tab>
                     </paper-tabs>
                 </paper-toolbar>
-                <iron-pages class="layout horizontal center-justified" selected="{{selected}}">
-                     <paper-material class="container layout vertical" elevation="1">
+                <iron-pages class="layout horizontal center-justified" selected="{{selected}}" attr-for-selected="data-name">
+                     <paper-material data-name="about" class="container layout vertical" elevation="1">
                         <about-me class="flex layout vertical"></about-me>
                      </paper-material>
-                    <div>Projects</div>
-                    <paper-material class="container" elevation="1">
+                    <div data-name="projects">Projects</div>
+                    <paper-material data-name="publications" class="container" elevation="1">
                         <my-publications></my-publications>
                     </paper-material>
-                    <div>Page 4</div>
+                    <div data-name="demo">Page 4</div>
                 </iron-pages>
             </paper-scroll-header-panel>
         </template>
     </body>
-    <script>
-
-        document.getElementById("template").addEventListener("dom-change", function(){
-            document.querySelector("paper-tabs").select(0);
-        });
-    </script>
 </html>
