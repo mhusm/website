@@ -36,6 +36,10 @@
                 width: 100%;
             }
 
+            .controller ~ .viewer img {
+                max-width: 50%;
+            }
+
             .controller img {
                 margin: 4px;
             }
@@ -78,13 +82,16 @@
         properties: {
             selected: {
                 type: Number,
-                value: 0
+                value: 0,
+                observer: "selectedChanged"
             },
             album: {
                 type: Object
             },
             currentIndex: {
-                type: Number
+                type: Number,
+                observer: "currentChanged",
+                notify: true
             }
 
         },
@@ -102,19 +109,28 @@
             window.addEventListener("resize", this.adjustRoles.bind(this));
 
             this.$.images.addEventListener("dom-change", function(){
-                this.$$(".controller").querySelector("img").classList.add("selected");
+                this.updateControllerImg(this.currentIndex);
             }.bind(this));
-
         },
 
         select: function(event) {
             this.$.pages.select(event.model.index);
+            this.updateControllerImg(event.model.index);
+        },
+
+        updateControllerImg: function(selected) {
             var previous= this.$$(".controller").querySelector("img.selected");
             if (previous) {
                 previous.classList.remove("selected");
             }
+            if (this.$$(".controller").querySelectorAll("img")[selected]) {
+                this.$$(".controller").querySelectorAll("img")[selected].classList.add("selected");
+            }
 
-            this.$$(".controller").querySelectorAll("img")[event.model.index].classList.add("selected");
+        },
+
+        currentChanged: function() {
+            this.updateControllerImg(this.currentIndex);
         },
 
         getSource: function() {
