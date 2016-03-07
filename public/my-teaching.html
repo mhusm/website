@@ -38,11 +38,27 @@
 
             <h3>Master Theses</h3>
             <ul>
+                <template is="dom-repeat" items="[[master]]">
+                    <li><span class="title">[[item.title]]</span>
+                        <div>
+                    <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-Supervisor: <span>[[item.cosupervisor]]</span>)</span>
+                        </div>
+                    </li>
+                </template>
             </ul>
         </div>
         <div class="paper">
 
             <h3>Bachelor Theses</h3>
+            <ul>
+                <template is="dom-repeat" items="[[bachelor]]">
+                    <li><span class="title">[[item.title]]</span>
+                        <div>
+                            <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-Supervisor: <span>[[item.cosupervisor]]</span>)</span>
+                        </div>
+                    </li>
+                </template>
+            </ul>
         </div>
     </template>
     <style>
@@ -53,6 +69,9 @@
         }
         .paper:nth-child(1) {
             margin-top: 0;
+        }
+        .title{
+            font-style: italic;
         }
     </style>
 </dom-module>
@@ -95,8 +114,8 @@
                         new Thesis("Tobias Grob", "Low Cost Attention Tracking in Cross-Device Scenarios", 2015, "Linda di Geronimo"),
                         new Thesis("Can Türk", "Cross-Tilt-and-Tap: Design and Development of Tilting Interactions in a Cross-Device Environment", 2015, "Linda di Geronimo"),
                         new Thesis("Jil Weber", "Visual Tools for XD-MVC", 2015),
-                        new Thesis("Butz Oliver", "An Email-Based Data Management Tool for Clubs", 2016),
-                        new Thesis("Aryaman Fasciati", "One Way Reactive Data Flow for XD-MVC", 2015)
+                        new Thesis("Oliver Butz", "An Email-Based Data Management Tool for Clubs", 2016),
+                        new Thesis("Aryaman Fasciati", "One Way Reactive Data Flow for XD-MVC", 2016)
                     ];
                 }
             }
