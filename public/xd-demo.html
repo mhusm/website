@@ -82,16 +82,14 @@
         properties: {
             selected: {
                 type: Number,
-                value: 0,
-                observer: "selectedChanged"
+                value: 0
             },
             album: {
                 type: Object
             },
             currentIndex: {
                 type: Number,
-                observer: "currentChanged",
-                notify: true
+                observer: "currentChanged"
             }
 
         },

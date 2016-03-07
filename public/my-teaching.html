@@ -37,6 +37,8 @@
         <div class="paper">
 
             <h3>Master Theses</h3>
+            <ul>
+            </ul>
         </div>
         <div class="paper">
 
@@ -55,8 +57,50 @@
     </style>
 </dom-module>
 <script>
+    function Thesis(student, title, year, cosupervisor) {
+        this.title = title;
+        this.student = student;
+        this.year = year;
+        this.cosupervisor = cosupervisor;
+    }
     Polymer({
-        is: 'my-teaching'
+        is: 'my-teaching',
+        properties: {
+            master: {
+                type: Array,
+                value: function(){
+                    return [new Thesis("Theano Mintsi", "Designing User Interfaces for Multi-Device Environments", 2013, "Michael Nebeling"),
+                        new Thesis("Elena Teunissen", "A Framework for Multi-Device Application Development based on Kinect", 2013, "Michael Nebeling"),
+                        new Thesis("Stefano Pongelli", "Jigsaw: An infrastructure for cross-device mashups", 2013, "Michael Nebeling"),
+                        new Thesis("Giulio Valente", "XDSession: Supporting Integrated Testing and Development of Cross-Device Applications", 2014, "Michael Nebeling"),
+                        new Thesis("Daniel Huguenin", "OmniPresent: An Infrastructure for Multi-Device Presentations", 2015, "Matthias Geel"),
+                        new Thesis("Nina Heyder", "XDTools: Testing and Debugging Cross-Device Applications", 2015),
+                        new Thesis("Nicola Marchacci Rossi", "Usage Analysis of Cross-Device Applications in the Wild", 2016),
+                        new Thesis("Marica Bertarini", "MyoShare: Exploiting Hand-Free Gestures to Share Data Among Devices", 2016, "Linda di Geronimo"),
+                        new Thesis("Diana Birenbaum", "Data Quality Assurance in a Mobile Application for Food Science Data", 2016, "David Weber"),
+                        new Thesis("Michael Spiegel", "Automated Testing of Cross-DeviceWeb Applications", 2016, "Alfonso Murolo"),
+                        new Thesis("Fabian Stutz", "wIDE: A smart IDE for the web with effort-saving suggestions", 2016, "Alfonso Murolo")
+                    ];
+                }
+            },
+            bachelor: {
+                type: Array,
+                value: function(){
+                    return [new Thesis("Jannick Griner", "Kinect Mobile Tracking Tracking Mobile Devices in Multi-User/Multi-Device Environments", 2014, "Michael Nebeling"),
+                        new Thesis("Jascha Grübel", "Assessing Human Interface Device Interaction in Virtual Environments", 2014, "Michael Nebeling, Victor Schinazi"),
+                        new Thesis("Madelin Schumacher", "Extending Existing User Interface Design Patterns for Cross-Device Applications", 2014, "Michael Nebeling"),
+                        new Thesis("Seraiah Walter", "Multi-Device Support for Fluid Whiteboard Interaction and Asymmetric Collaboration", 2014, "Fabrice Matulic"),
+                        new Thesis("Fabian Stutz", "XDModel: A Framework for Peer-to-Peer Cross-Device Model Management for the Web", 2015, "Michael Nebeling"),
+                        new Thesis("Silvan Egli", "Exploring Communication Architectures for XD-MVC", 2015),
+                        new Thesis("Tobias Grob", "Low Cost Attention Tracking in Cross-Device Scenarios", 2015, "Linda di Geronimo"),
+                        new Thesis("Can Türk", "Cross-Tilt-and-Tap: Design and Development of Tilting Interactions in a Cross-Device Environment", 2015, "Linda di Geronimo"),
+                        new Thesis("Jil Weber", "Visual Tools for XD-MVC", 2015),
+                        new Thesis("Butz Oliver", "An Email-Based Data Management Tool for Clubs", 2016),
+                        new Thesis("Aryaman Fasciati", "One Way Reactive Data Flow for XD-MVC", 2015)
+                    ];
+                }
+            }
+        }
     });
 
 
