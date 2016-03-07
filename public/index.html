@@ -24,6 +24,7 @@
         <link rel="import" href="bower_components/iron-page-url/iron-page-url.html">
         <link rel="import" href="about-me.html">
         <link rel="import" href="my-publications.html">
+        <link rel="import" href="my-teaching.html">
         <link rel="import" href="xd-demo.html">
         <link rel="stylesheet" href="style/main.css" />
 
@@ -56,7 +57,8 @@
                     <!--<span class="title">Title</span>-->
                     <paper-tabs selected="{{selected}}" attr-for-selected="data-name">
                         <paper-tab selected data-name="about"><span class="description">About me</span><iron-icon icon="social:person"></iron-icon></paper-tab>
-                        <paper-tab data-name="projects"><span class="description">Projects</span><iron-icon icon="social:school"></iron-icon></paper-tab>
+                        <paper-tab data-name="projects"><span class="description">Projects</span><iron-icon icon="icons:build"></iron-icon></paper-tab>
+                        <paper-tab data-name="teaching"><span class="description">Teaching</span><iron-icon icon="social:school"></iron-icon></paper-tab>
                         <paper-tab data-name="publications"><span class="description">Publications</span><iron-icon icon="av:library-books"></iron-icon></paper-tab>
                         <paper-tab data-name="demo"><span class="description">Demo</span><iron-icon icon="device:devices"></iron-icon></paper-tab>
                     </paper-tabs>
@@ -66,6 +68,9 @@
                         <about-me class="flex layout vertical"></about-me>
                      </paper-material>
                     <div data-name="projects">Projects</div>
+                    <paper-material data-name="teaching" class="container" elevation="1">
+                        <my-teaching></my-teaching>
+                    </paper-material>
                     <paper-material data-name="publications" class="container" elevation="1">
                         <my-publications></my-publications>
                     </paper-material>
