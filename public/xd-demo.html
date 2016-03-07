@@ -36,6 +36,14 @@
                 width: 100%;
             }
 
+            .controller img {
+                margin: 4px;
+            }
+            .controller img.selected {
+                border: 2px solid fuchsia;
+                margin: 2px;
+            }
+
         </style>
         <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
 
@@ -46,7 +54,7 @@
         <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
         <controller-layout class="layout vertical center">
             <div class="controller">
-                <template is="dom-repeat" items="[[album.thumbs]]">
+                <template id="images" is="dom-repeat" items="[[album.thumbs]]">
                     <img on-tap="select" src="[[item]]" />
                 </template>
 
@@ -90,14 +98,29 @@
             XDmvc.on("XDserverReady", this.adjustRoles.bind(this));
             XDmvc.on("XDconnection", this.adjustRoles.bind(this));
             XDmvc.on("XDdisconnection", this.adjustRoles.bind(this));
+            XDmvc.on("XDdevice", this.adjustRoles.bind(this));
+            window.addEventListener("resize", this.adjustRoles.bind(this));
+
+            this.$.images.addEventListener("dom-change", function(){
+                this.$$(".controller").querySelector("img").classList.add("selected");
+            }.bind(this));
 
         },
+
         select: function(event) {
             this.$.pages.select(event.model.index);
+            var previous= this.$$(".controller").querySelector("img.selected");
+            if (previous) {
+                previous.classList.remove("selected");
+            }
+
+            this.$$(".controller").querySelectorAll("img")[event.model.index].classList.add("selected");
         },
+
         getSource: function() {
             return this.album.large[this.selected];
         },
+
         adjustRoles: function() {
             if (XDmvc.getConnectedDevices().length == 0) {
                 XDmvc.addRole("viewer");
