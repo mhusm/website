@@ -54,7 +54,7 @@
         <xdmvc-connection ></xdmvc-connection>
 
         <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
-        <xdmvc-url-pairing url="{{url}}"></xdmvc-url-pairing>
+        <xdmvc-url-pairing id="url" url="{{url}}"></xdmvc-url-pairing>
         <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
         <controller-layout id="controller" class="layout vertical center">
             <div class="controller">
@@ -161,6 +161,10 @@
 
             }
 
+        },
+
+        urlChanged: function(){
+            this.$.url.url = window.location.toString();
         }
     });
 

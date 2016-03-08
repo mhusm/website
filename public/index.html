@@ -99,5 +99,16 @@
         if(!template.selected) {
             template.selected = "about";
         }
+
+        var ironurl = document.querySelector('iron-page-url');
+        ironurl.addEventListener("hash-changed", function(event){
+            this.async(function() {
+                var demo = document.querySelector('xd-demo');
+                demo.urlChanged();
+            }
+            );
+
+        });
+
     });
 </script>
