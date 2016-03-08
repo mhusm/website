@@ -30,10 +30,11 @@
         <link rel="stylesheet" href="style/main.css" />
 
         <meta name="viewport" content="width=device-width, user-scalable=no">
+        <title>Maria Husmann</title>
     </head>
     <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
 
-    <style>
+    <style is="custom-style">
         paper-scroll-header-panel {
             height: 100%;
         }
@@ -42,14 +43,20 @@
             width: 100%;
             min-height: 100%;
         }
-
-    </style>
-
-    <style is="custom-style">
+        paper-toolbar {
+            --paper-toolbar-background: #3F798B;
+        }
         iron-pages {
             background-color: var(--google-grey-100);
         }
+
+        paper-tabs {
+            --paper-tabs-selection-bar-color: white;
+        }
+
+
     </style>
+
     <body class="fullbleed layout vertical">
         <template id="template" is="dom-bind">
             <iron-page-url hash="{{selected}}"></iron-page-url>

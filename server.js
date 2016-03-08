@@ -73,4 +73,4 @@ function handleGallery(req, res, next){
 createModel();
 xdmvc.start();
 
-server.listen(8082);
+server.listen(80);
