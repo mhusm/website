@@ -35,9 +35,6 @@ paper-tab {
         display: none;
     }
 
-
-}
-@media (max-width: 600px), (max-height: 780px) {
     .container {
         margin: 0;
         padding: 0;
@@ -47,4 +44,3 @@ paper-tab {
     }
 
 }
-

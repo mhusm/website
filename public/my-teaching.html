@@ -41,7 +41,7 @@
                 <template is="dom-repeat" items="[[master]]">
                     <li><span class="title">[[item.title]]</span>
                         <div>
-                    <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-Supervisor: <span>[[item.cosupervisor]]</span>)</span>
+                    <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-supervisor: <span>[[item.cosupervisor]]</span>)</span>
                         </div>
                     </li>
                 </template>
@@ -54,7 +54,7 @@
                 <template is="dom-repeat" items="[[bachelor]]">
                     <li><span class="title">[[item.title]]</span>
                         <div>
-                            <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-Supervisor: <span>[[item.cosupervisor]]</span>)</span>
+                            <span>[[item.student]]</span>, <span>[[item.year]]</span><span hidden="[[!item.cosupervisor]]"> (Co-supervisor: <span>[[item.cosupervisor]]</span>)</span>
                         </div>
                     </li>
                 </template>
@@ -73,6 +73,7 @@
         .title{
             font-style: italic;
         }
+
     </style>
 </dom-module>
 <script>

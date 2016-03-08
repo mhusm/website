@@ -56,7 +56,7 @@
         <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
         <xdmvc-url-pairing url="{{url}}"></xdmvc-url-pairing>
         <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
-        <controller-layout class="layout vertical center">
+        <controller-layout id="controller" class="layout vertical center">
             <div class="controller">
                 <template id="images" is="dom-repeat" items="[[album.thumbs]]">
                     <img on-tap="select" src="[[item]]" />
@@ -106,8 +106,8 @@
             XDmvc.on("XDdevice", this.adjustRoles.bind(this));
             window.addEventListener("resize", this.adjustRoles.bind(this));
 
-            this.$.images.addEventListener("dom-change", function(){
-                this.updateControllerImg(this.currentIndex);
+            this.$.controller.addEventListener("dom-change", function(){
+                this.async(this.currentChanged);
             }.bind(this));
         },
 

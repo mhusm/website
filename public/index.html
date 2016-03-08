@@ -25,6 +25,7 @@
         <link rel="import" href="about-me.html">
         <link rel="import" href="my-publications.html">
         <link rel="import" href="my-teaching.html">
+        <link rel="import" href="my-projects.html">
         <link rel="import" href="xd-demo.html">
         <link rel="stylesheet" href="style/main.css" />
 
@@ -64,10 +65,12 @@
                     </paper-tabs>
                 </paper-toolbar>
                 <iron-pages class="layout horizontal center-justified" selected="{{selected}}" attr-for-selected="data-name">
-                     <paper-material data-name="about" class="container layout vertical" elevation="1">
-                        <about-me class="flex layout vertical"></about-me>
+                     <paper-material data-name="about" class="container" elevation="1">
+                        <about-me></about-me>
                      </paper-material>
-                    <div data-name="projects">Projects</div>
+                    <paper-material data-name="projects" class="container" elevation="1">
+                        <my-projects></my-projects>
+                    </paper-material>
                     <paper-material data-name="teaching" class="container" elevation="1">
                         <my-teaching></my-teaching>
                     </paper-material>

@@ -1,0 +1,227 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+<dom-module id="my-projects">
+    <template>
+        <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
+        <h2>Project Lead</h2>
+        <div class="paper">
+            <h3>XD-MVC <a href="https://github.com/mhusm/XD-MVC" title="XD-MVC on Github"><img src="img/GitHub-Mark-32px.png"/></a></h3>
+            <div class="wrapper">
+                <p>
+                    A framework for building cross-device applications using plain JavaScript or Polymer.
+                    An integration with the React framework is currently under construction. Handles connection management,
+                    data synchronisation, and provides information about roles and devices.
+                    Includes a library for device-to-device communication that uses peer-to-peer channels (WebRTC) if supported and falls back
+                    to a client-server architecture with WebSockets if not.
+                    Provides default layouts for commonly used patterns. The demo section of this website has been built with XD-MVC. Several
+                    sample applications are available including a maps and a gallery application.
+                </p>
+                <div>
+                    <img src="img/projects/xdmvc.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="paper">
+            <h3>XD-Testing</h3>
+            <p>A system for the automatic testing of cross-device applications. Allows tests that take into account multiple devices and runs them
+            for multiple designed or randomly generated device configurations.
+            This project is still at an early stage. It will be published on Github later on.</p>
+        </div>
+
+        <div class="paper">
+            <h3>XDTools</h3>
+            <div class="wrapper">
+                <p>
+                    A set of tools for testing and debugging web-based cross-device applications. Allows the emulation of multiple devices at the same time,
+                    coordinated record and replay across multiple devices and the integration of real devices. Device configurations can be switched easily
+                    (for example tablet-tablet to tablet-phone-desktop) and existing debugging tools such as the console have been integrated.
+                    This project will soon be available on Github.
+                </p>
+                <div>
+
+                     <img src="img/projects/xdtools.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>XD-Analytics <a href="https://github.com/mhusm/XD-Analytics" title="XD-Analytics on Github"><img src="img/GitHub-Mark-32px.png"/></a></h3>
+            <div class="wrapper">
+                <p>A system for analysing the usage of web-based cross-device applications. Introduces and tracks a set of metrics that are of interest
+                in cross-device applications, such as the type of devices used in parallel. The UI builds on concept from faceted search and provides the analyst
+                with a powerful tool to drill down into the data and construct charts</p>
+                <div>
+                  <img src="img/projects/overview.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>XD-Bike</h3>
+            <div class="wrapper">
+                <p>A showcase application built with XD-MVC. A repository of mountainbike tours that distributes its UI across all paired devices.
+                Takes into account size of the screen and assigns elements that require a lot of space (for example a map) to the largest device.</p>
+                <div>
+                    <img src="img/projects/XDbike.jpg"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>MultiMasher</h3>
+            <div class="wrapper">
+                <p>A visual tool for prototyping cross-device web applications by mashing up existing websites. Based on a centralised, remote-control architecture.</p>
+                <div>
+                    <img src="img/projects/multimasher.png"/>
+                </div>
+            </div>
+        </div>
+
+        <h2>Contributor</h2>
+
+
+        <div class="paper">
+            <h3>OmniPresent</h3>
+            <div class="wrapper">
+                <p>A system for multi-device presentations. Three modes give a lot flexibility to the author and allow them to either re-use existing
+                single screen presentation without much effort or to take complete control over the process and script the distribution. The devices in the
+                audience can also be used to present content, to run polls, and mark slides for questions.</p>
+                <div>
+                    <img src="img/projects/Interactivity.jpg"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>XDStudio</h3>
+            <div class="wrapper">
+                <p>An authoring environment for cross-device user interfaces. Both on-device authoring with real devices and working with emulated devices is supported. Introduces the concept of distribution profiles that take into account the type of device and roles of the user in the specification of the UI distribution.</p>
+                <div>
+                    <img src="img/projects/ondevice.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>Multi-Device Support For a Digital Whiteboard </h3>
+            <div class="wrapper">
+                <p>A system for multi-device presentations. Three modes give a lot flexibility to the author and allow them to either re-use existing
+                single screen presentation without much effort or to take complete control over the process and script the distribution. The devices in the
+                audience can also be used to present content, to run polls, and mark slides for questions.</p>
+                <div>
+                    <img src="img/projects/whiteboard.jpg"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>XDSession</h3>
+            <div class="wrapper">
+                <p>A framework for building cross-device applications based on a session concept that connects users, devices, and the data that is shared among them. Includes two visual tools - the session controller and the session inspector - that aim to facilitate the development and testing process.</p>
+                <div>
+                    <img src="img/projects/xdsession.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>XDKinect</h3>
+            <div class="wrapper">
+                <p>A toolkit for cross-device UIs that integrates the use of Kinect for interactions with the devices.</p>
+                <div>
+                    <img src="img/projects/xdkinect.png"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="paper">
+            <h3>Archipelago 2.0</h3>
+            <div class="wrapper">
+                <p>A web-based re-implementation of the Archipelago system for digital whiteboards that allows the collection and grouping of content in a two dimensional infinite canvas. Cross-device support was added by integrating phones, tablets, and notebooks.</p>
+                <div>
+                    <img src="img/projects/arxdipelago.jpg"/>
+                </div>
+            </div>
+        </div>
+
+
+    </template>
+    <style>
+        .paper {
+            border: 1px solid #E5E5E5;
+            margin: 7px;
+            padding: 7px;
+        }
+        .paper:nth-child(1) {
+            margin-top: 0;
+        }
+
+        div > img {
+            max-width: 100%;
+        }
+
+        .wrapper {
+            display: flex;
+        }
+
+
+        p {
+            max-width: 45%;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        h2 {
+            margin-left: 14px;
+        }
+
+        h3 a {
+            margin-left: 10px;
+        }
+
+        @media (max-width: 1000px) {
+            p {
+                max-width: 100%;
+                display: block;
+            }
+            div > img {
+                max-width: 100%;
+                display: block;
+                margin: auto;
+            }
+
+            .wrapper {
+                display: block;
+            }
+        }
+
+
+    </style>
+</dom-module>
+<script>
+    function publication(title, authors, conference, date, award) {
+        this.title = title;
+        this.authors = authors;
+        this.conference = conference;
+        this.date = date;
+        this.award = award;
+    }
+    Polymer({
+        is: 'my-projects',
+
+        properties: {
+            publications: {
+                type: Array,
+                value: function() {
+                    return [];
+                }
+            }
+        }
+
+
+    });
+
+
+</script>
+
