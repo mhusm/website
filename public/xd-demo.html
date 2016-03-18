@@ -43,7 +43,7 @@
             .controller img {
                 margin: 4px;
             }
-            .controller img.selected {
+            .controller img[selected] {
                 border: 2px solid #ff4081;
                 margin: 2px;
             }
@@ -59,7 +59,7 @@
         <controller-layout id="controller" class="layout vertical center">
             <div class="controller">
                 <template id="images" is="dom-repeat" items="[[album.thumbs]]">
-                    <img on-tap="select" src="[[item]]" />
+                    <img selected$="{{isSelected(currentIndex,index)}}" on-tap="select" src="[[item]]" />
                 </template>
 
             </div>
@@ -105,30 +105,15 @@
             XDmvc.on("XDdisconnection", this.adjustRoles.bind(this));
             XDmvc.on("XDdevice", this.adjustRoles.bind(this));
             window.addEventListener("resize", this.adjustRoles.bind(this));
-
-            this.$.controller.addEventListener("dom-change", function(){
-                this.async(this.currentChanged);
-            }.bind(this));
         },
 
         select: function(event) {
             this.$.pages.select(event.model.index);
-            this.updateControllerImg(event.model.index);
         },
 
-        updateControllerImg: function(selected) {
-            var previous= this.$$(".controller").querySelector("img.selected");
-            if (previous) {
-                previous.classList.remove("selected");
-            }
-            if (this.$$(".controller").querySelectorAll("img")[selected]) {
-                this.$$(".controller").querySelectorAll("img")[selected].classList.add("selected");
-            }
-
-        },
-
-        currentChanged: function() {
-            this.updateControllerImg(this.currentIndex);
+        isSelected: function(current, index){
+            console.log(index +" " +current);
+            return index === current;
         },
 
         getSource: function() {
