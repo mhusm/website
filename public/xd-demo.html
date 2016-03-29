@@ -57,9 +57,7 @@
 
         <xdmvc-connection ></xdmvc-connection>
 
-        <xdmvc-devices id="devices" devices="{{devices}}"></xdmvc-devices>
-        <xdmvc-url-pairing id="url" url="{{url}}"></xdmvc-url-pairing>
-        <xdmvc-connect connections="[[devices.connectedDevices]]" url="[[url]]"></xdmvc-connect>
+        <xdmvc-connect></xdmvc-connect>
         <controller-layout id="controller" class="layout vertical center">
             <div class="controller">
                 <template id="images" is="dom-repeat" items="[[album.thumbs]]">
@@ -92,8 +90,7 @@
                 type: Object
             },
             currentIndex: {
-                type: Number,
-                observer: "currentChanged"
+                type: Number
             }
 
         },
