@@ -48,6 +48,10 @@
                 margin: 2px;
             }
 
+            xdmvc-connect {
+                --connect-badge-color: #ff4081;
+            }
+
         </style>
         <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
 
@@ -112,7 +116,6 @@
         },
 
         isSelected: function(current, index){
-            console.log(index +" " +current);
             return index === current;
         },
 
