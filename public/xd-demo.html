@@ -55,9 +55,9 @@
         </style>
         <style is="custom-style" include="iron-flex iron-flex-alignment iron-flex-reverse iron-positioning iron-flex-factors"></style>
 
-        <xdmvc-connection ></xdmvc-connection>
+        <xdmvc-connection></xdmvc-connection>
 
-        <xdmvc-connect></xdmvc-connect>
+        <xdmvc-connect  id="connect"></xdmvc-connect>
         <controller-layout id="controller" class="layout vertical center">
             <div class="controller">
                 <template id="images" is="dom-repeat" items="[[album.thumbs]]">
@@ -149,7 +149,7 @@
         },
 
         urlChanged: function(){
-            this.$.url.url = window.location.toString();
+            this.$.connect.url = window.location.toString();
         }
     });
 
