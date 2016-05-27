@@ -57,10 +57,10 @@ console.log(basePath);
 	console.log(album);
 }
 function handleGallery(req, res, next){
-	var parsedUrl = url.parse(req.url, true)
+	var parsedUrl = url.parse(req.url, true);
 	var query = parsedUrl.query;
 	var path = parsedUrl.pathname.split("/");
-	res.setHeader('Access-Control-Allow-Origin', '*')
+	res.setHeader('Access-Control-Allow-Origin', '*');
 
 	if (path.length === 2 && path[1].length ===0){
 		res.writeHead(200, {'Content-Type': 'text/json' });

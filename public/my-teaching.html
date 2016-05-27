@@ -23,12 +23,14 @@
                 <li>Cross-Device Applications (Mobile and Personal Information Systems 2015)</li>
                 <li>Real-time Libraries (Web Engineering 2015)</li>
                 <li>Web Components & Polymer (Web Engineering 2015)</li>
+                <li>JavaScript, Nodes.js, real-time communication, client-side frameworks (Web Engineering 2016)</li>
+                <li>Progressive Web Apps (Web Engineering 2016)</li>
             </ul>
 
         </div>
         <div class="paper">
 
-            <h3>Master Theses</h3>
+            <h3>Supervised Master Theses</h3>
             <ul>
                 <template is="dom-repeat" items="[[master]]">
                     <li><span class="title">[[item.title]]</span>
@@ -41,7 +43,7 @@
         </div>
         <div class="paper">
 
-            <h3>Bachelor Theses</h3>
+            <h3>Supervised Bachelor Theses</h3>
             <ul>
                 <template is="dom-repeat" items="[[bachelor]]">
                     <li><span class="title">[[item.title]]</span>
@@ -63,7 +65,7 @@
             margin-top: 0;
         }
         .title{
-            font-style: italic;
+            font-weight: bold;
         }
 
     </style>
@@ -91,7 +93,8 @@
                         new Thesis("Marica Bertarini", "MyoShare: Exploiting Hand-Free Gestures to Share Data Among Devices", 2016, "Linda di Geronimo"),
                         new Thesis("Diana Birenbaum", "Data Quality Assurance in a Mobile Application for Food Science Data", 2016, "David Weber"),
                         new Thesis("Michael Spiegel", "Automated Testing of Cross-DeviceWeb Applications", 2016, "Alfonso Murolo"),
-                        new Thesis("Fabian Stutz", "wIDE: A smart IDE for the web with effort-saving suggestions", 2016, "Alfonso Murolo")
+                        new Thesis("Fabian Stutz", "wIDE: A smart IDE for the web with effort-saving suggestions", 2016, "Alfonso Murolo"),
+                        new Thesis("Jost Joller", "Exploring the Role of Paper in Cross-Device Applications", 2016)
                     ];
                 }
             },
@@ -108,7 +111,8 @@
                         new Thesis("Can Türk", "Cross-Tilt-and-Tap: Design and Development of Tilting Interactions in a Cross-Device Environment", 2015, "Linda di Geronimo"),
                         new Thesis("Jil Weber", "Visual Tools for XD-MVC", 2015),
                         new Thesis("Oliver Butz", "An Email-Based Data Management Tool for Clubs", 2016),
-                        new Thesis("Aryaman Fasciati", "One Way Reactive Data Flow for XD-MVC", 2016)
+                        new Thesis("Aryaman Fasciati", "One Way Reactive Data Flow for XD-MVC", 2016),
+                        new Thesis("Ranjini Chithambaram", "A User Concept for Cross-Device Applications", 2016)
                     ];
                 }
             }
