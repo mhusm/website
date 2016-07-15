@@ -59,7 +59,7 @@
 
     <body class="fullbleed layout vertical">
         <template id="template" is="dom-bind">
-            <iron-page-url hash="{{selected}}"></iron-page-url>
+            <iron-page-url url-space-regex="^((?!/publications).)*$" hash="{{selected}}"></iron-page-url>
             <paper-scroll-header-panel class="flex">
                 <paper-toolbar class="layout horizontal center-justified" >
                     <!--<span class="title">Title</span>-->
