@@ -16,7 +16,7 @@
                 <span>[[item.conference]]</span>,
                 <span>[[item.date]]</span>
                 <span hidden="[[!item.award]]" style="font-weight: bold">([[item.award]])</span>
-                <span><a target="_blank" href="[[item.file]]"><iron-icon icon="icons:file-download"></iron-icon></a></span>
+                <span hidden="[[!item.file]]"><a target="_blank" href="[[item.file]]"><iron-icon icon="icons:file-download"></iron-icon></a></span>
             </div>
         </template>
     </template>
@@ -64,6 +64,18 @@
                 type: Array,
                 value: function() {
                     return [
+                        new Publication("Combining Physical and Social Proximity for Device Pairing",
+                                "Maria Husmann, Sivaranjini Chithambaram, Moira C. Norrie",
+                                "3rd Intl. Workshop on Interacting with Multi-Device Ecologies in the Wild (Cross-Surface 2016), ISS Conference, Niagra Falls, Canada",
+                                "November 2016",
+                                "publications/pairing.pdf"
+                        ),
+                        new Publication("UI Testing Cross-Device Applications",
+                                "Maria Husmann, Michael Spiegel, Alfonso Murolo, Moira C. Norrie",
+                                "Proc. ACM Interactive Surfaces and Spaces 2016 Conference (ISS 2016), Niagra Falls, Canada",
+                                "November 2016",
+                                "publications/xdtesting.pdf"
+                        ),
                         new Publication("Is a Framework Enough? Cross-Device Testing and Debugging",
                                 "Maria Husmann, Nina Heyder, Moira C. Norrie",
                                 "Proc. 8th ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS 2016), Brussels, Belgium",
